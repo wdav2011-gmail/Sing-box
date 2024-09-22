@@ -4,11 +4,18 @@
 * 支持的系统：Ubuntu/Debian/CentOS/Alpine/Fedora/Rocky/Almalinux/kail
 * 注意nat小鸡安装完一键脚本之后需手动更改订阅端口和节点端口在允许范围内的端口，否则节点不通
 * 可在脚本前添加PORT变量，随脚本一起运行，即可定义端口，需确保PORT端口后面的3个端口可用，否则节点不通
+* 可选环境变量PORT CFIP CFPORT
 
 ## VPS一键四协议安装脚本
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/eooce/sing-box/main/sing-box.sh)
 ```
+## vps带端口变量运行示列
+PORT=开放的端口 确保后面3个端口可用 CFIP为优选IP或优选域名，CFPORT为优选ip或优选域名对应的端口
+```
+PORT=你的端口 CFIP=www.visa.com.tw CFPORT=443 bash <(curl -Ls https://raw.githubusercontent.com/eooce/sing-box/main/sing-box.sh)
+```
+
 
 ## ssh综合工具箱一键脚本
 ```
@@ -21,6 +28,7 @@ curl -fsSL https://raw.githubusercontent.com/eooce/ssh_tool/main/ssh_tool.sh -o 
 * 列如：UUID=123456 NEZHA_SERVER=nz.abcd.com NEZHA_PORT=5555 NEZHA_KEY=123ABC ARGO_DOMAIN=2go.admin.com ARGO_AUTH=abc123  
 * 注意：面板开的端口必须符合脚本中提示的要求，并且与输入的对应，面板运行应用程序的权限必须打开，个别服务器ip被墙换到新增加的服务器即可，客户端跳过证书验证需设置为true，否则hy2和tuic不通
 * 详细图文教程地址：https://linux.do/t/topic/169670
+* 保活把keep_00.sh上传至自己的vps并修改自己的参数运行,仅支持四合一和三合一，udp单协议不支持，vmess单协议自行修改运行脚本
 
 ## Serv00|CT8一键四协议安装脚本vmess-ws|vmess-ws-tls(argo)|hy2|tuic5
 ```
